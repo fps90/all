@@ -26,7 +26,7 @@ def first_page(_):
             [
                 InlineKeyboardButton(text=_["H_B_3"], callback_data="helpcallback hb3"),
                 InlineKeyboardButton(
-                    text=_["H_B_10"], callback_data="helpcallback hb9"
+                    text=_["H_B_10"], callback_data="only_music_help"
                 ),
                 InlineKeyboardButton(text=_["H_B_7"], callback_data="helpcallback hb6"),
             ],
@@ -87,7 +87,7 @@ def help_back_markup(_):
         [
             [
                 InlineKeyboardButton(
-                    text=_["BACK_BUTTON"], callback_data=f"settings_back_helper"
+                    text=_["BACK_BUTTON"], callback_data=f"only_music_help"
                 ),
                 InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close"),
             ]
