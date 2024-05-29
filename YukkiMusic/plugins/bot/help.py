@@ -33,7 +33,7 @@ HELP_COMMAND = get_command("HELP_COMMAND")
 
 
 @app.on_message(filters.command(HELP_COMMAND) & filters.private & ~BANNED_USERS)
-@app.on_callback_query(filters.regex("settings_back_helper") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("only_music_help") & ~BANNED_USERS)
 async def helper_private(
     client: app, update: Union[types.Message, types.CallbackQuery]
 ):
