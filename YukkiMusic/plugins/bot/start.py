@@ -3,7 +3,6 @@ from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID, START_IMG_URL
 
-
 # دالة وهمية add_served_user لتجنب الخطأ
 async def add_served_user(user_id: int):
     # يمكنك إضافة منطق تخزين المستخدم هنا إذا لزم الأمر
@@ -27,7 +26,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER_ID}"),
                 ],
             ]
         )
@@ -49,11 +48,12 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER_ID}"),
                 ],
             ]
         )
     )
+
 
 
 @app.on_callback_query(filters.regex("command_list"))
@@ -79,7 +79,7 @@ async def commands_set(_, query: CallbackQuery):
 
 @app.on_callback_query(filters.regex("next"))
 async def next_set(_, query: CallbackQuery):
-    await query.answer("التالي")
+    await query.answer("تم فتح لوحة التحكم")
     await query.edit_message_text(
         """- تابع الازرار في الاسفل ↓
 
