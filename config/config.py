@@ -242,7 +242,7 @@ PHOTO = list(
 
 START_IMG_URL = getenv(
     "START_IMG_URL",
-    "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
+    "https://graph.org/file/a0eaebe4d586f5c0b91d1.jpg",
 )
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
