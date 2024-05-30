@@ -26,7 +26,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER_ID}"),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER}"),
                 ],
             ]
         )
