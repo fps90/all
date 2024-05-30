@@ -27,7 +27,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"https://t.me/{OWNER_USER}"),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
                 ],
             ]
         )
@@ -36,7 +36,7 @@ async def start_(c: Client, message: Message):
 
 @app.on_callback_query(filters.regex("home_start"))
 async def start_set(_, query: CallbackQuery):
-    await query.answer("home start")
+    await query.answer("القائمة الرئيسية")
     await query.edit_message_text(
         f"""أَهلًا بك عزيزي في بوت تشغيل الميديا الصوتية في المجموعات والقنوات مع دعم مُميزات كثيرة يُمكنُك التحقُق منها عن طريق إِستخدام الازرار أدناه . \n⎯ ⎯ ⎯ ⎯""",
         reply_markup=InlineKeyboardMarkup(
@@ -49,7 +49,7 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"https://t.me/{OWNER_USER}"),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
                 ],
             ]
         )
@@ -131,7 +131,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="next")
                 ],
             ]
         ),
@@ -155,7 +155,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="next")
                 ],
             ]
         ),
