@@ -1,7 +1,7 @@
 from YukkiMusic import app
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_USER
 
 
 # دالة وهمية add_served_user لتجنب الخطأ
@@ -30,7 +30,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER_ID}"),
+                    InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"https://t.me/{OWNER_USER}"),
                 ],
             ]
         ),
@@ -57,7 +57,7 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton("⦗ مطور البوت ⦘", user_id=OWNER_ID),
+                    InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"https://t.me/{OWNER_USER}"),
                 ],
             ]
         ),
