@@ -7,6 +7,6 @@ from config import OWNER
 # تحديد لوحة المفاتيح
 keyboard = ReplyKeyboardMarkup([['Button 1', 'Button 2']], resize_keyboard=True)
 
-@app.on_message(filters.command('admin') & filters.user(OWNER))
-def start_(client, message):
-    message.reply_text('اهلا بك عزيزي ⦗ المطور الاساسي ⦘ \n – – – – – –', reply_markup=keyboard)
+@app.on_message(filters.command('start') & filters.user(OWNER))
+async def start_command(client, message: Message):
+    await message.reply_text('لوحة المفاتيح للمطور:', reply_markup=keyboard)
