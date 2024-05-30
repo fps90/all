@@ -26,7 +26,7 @@ API_HASH = getenv("API_HASH")
 # ________________________________________________________________________________#
 ## Get it from @Botfather in Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
-OWNER = getenv("OWNER","RR8R9")
+OWNER = 1854384004
 # ________________________________________________________________________________#
 
 ASSISTANT_PREFIX = getenv("ASSISTANT_PREFIX", ".")
