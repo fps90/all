@@ -239,10 +239,10 @@ stream_4 :  "**✮ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ**\n\n**✯ 𝐓ɩt
 # Inline Buttons
 
 #General Buttons
-CLOSE_BUTTON  : "ᴄʟᴏsᴇ"
-CLOSEMENU_BUTTON  : "ᴄʟᴏsᴇ"
+CLOSE_BUTTON  : "⦗ تنظيف ⦘"
+CLOSEMENU_BUTTON  : "⦗ تنظيف ⦘"
 BACK_BUTTON : "ʙᴀᴄᴋ"
-UNBAN_BUTTON : "ᴜɴʙᴀɴ ᴀssɪsᴛᴀɴᴛ"
+UNBAN_BUTTON : "⦗ رفع الحظر ⦘"
 
 #Lyrics
 L_B_1 : "🚀 ᴄʜᴇᴄᴋᴏᴜᴛ ʟʏʀɪᴄs ɴᴏᴡ"
