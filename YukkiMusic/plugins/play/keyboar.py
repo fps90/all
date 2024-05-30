@@ -1,7 +1,7 @@
 
 from YukkiMusic import app
 from pyrogram import Client, filters
-from pyrogram.types import ReplyKeyboardMarkup
+from pyrogram.types import ReplyKeyboardMarkup, Message
 from config import OWNER
 
 # تحديد لوحة المفاتيح
