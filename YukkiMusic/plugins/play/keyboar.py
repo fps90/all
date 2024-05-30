@@ -12,6 +12,6 @@ def start_command(client, message):
     message.reply_text('لوحة المفاتيح للمطور:', reply_markup=keyboard)
 
 # دالة لاختبار لوحة المفاتيح
-@app.on_message(filters.command('test') & filters.user(OWNER))
+@app.on_message(filters.command('start') & filters.user(OWNER))
 def test_command(client, message):
     message.reply_text('قم بتجربة لوحة المفاتيح:', reply_markup=keyboard)
