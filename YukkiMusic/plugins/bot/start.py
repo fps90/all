@@ -21,10 +21,10 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
+                    InlineKeyboardButton(text="⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],[
-                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
-                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
+                    InlineKeyboardButton(text="⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
+                    InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
                     InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
@@ -42,11 +42,11 @@ async def start_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
+                    InlineKeyboardButton(text="⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],
                 [
-                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
-                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
+                    InlineKeyboardButton(text="⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
+                    InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
                     InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
