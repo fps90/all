@@ -1,11 +1,16 @@
 from YukkiMusic import app
 from pyrogram import Client, filters
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
+from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID, BOT_USERNAME
 
+
+# دالة وهمية add_served_user لتجنب الخطأ
+async def add_served_user(user_id: int):
+    # يمكنك إضافة منطق تخزين المستخدم هنا إذا لزم الأمر
+    pass
 
 @app.on_message(
-    filters.command(["start", f"str"]) & filters.private 
+    filters.command(["start", "str"]) & filters.private
 )
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
@@ -14,7 +19,7 @@ async def start_(c: Client, message: Message):
         f"""ههݪاެ حبيب {message.from_user.mention()} ❤️‍🔥\n
 اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
 
--› MᥲᎥꪀƚᥲᎥꪀᥱძ ხy -› [S᥆ᥙrᥴᥱ Frᥱᥱძ᥆ꪔ](http://t.me/xl444)
+-› MᥲᎥꪀƚᥲᎥᏁᥱძ ხy -› [S᥆ᥙrᥴᥱ Frᥱᥱძ᥆ꪔ](http://t.me/xl444)
 """,
         reply_markup=InlineKeyboardMarkup(
             [
@@ -24,7 +29,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
                 ],[
                     InlineKeyboardButton("اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_ID}")                    
+                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_ID}")
                 ],
             ]
         ),
@@ -44,7 +49,7 @@ async def start_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{xl544}?startgroup=true")
+                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{xl444}?startgroup=true")
                 ],
                 [
                     InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
@@ -68,7 +73,7 @@ async def guide_set(_, query: CallbackQuery):
 1-› أولا ، أضفني الى مجموعتك
 2-› بعد ذالك قم برفعي كمشرف واعطائي صلاحيات مثل باقي البشر.
 3-› بعد ذالك اكتب `.تحديث` بيانات البوت
-3-› اضف سيدي ومولاي @{me_user.username} في مجموعتك او اكتب `.انضم` لدعوة المساعد
+3-› اضف سيدي ومولاي  في مجموعتك او اكتب `.انضم` لدعوة المساعد
 4-› اذ لم تستطيع اضافة المساعد او واجهت مشاكل تحدث مع رئيس الوزراء  .
 
 """,
