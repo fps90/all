@@ -24,12 +24,13 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{OWNER_ID}")
+                    InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],[
-                    InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
-                ],[
-                    InlineKeyboardButton("اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_ID}")
+                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=config.SUPPORT_CHANNEL),
+                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=config.SUPPORT_GROUP")
+                ],
+                [
+                    InlineKeyboardButton("⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
                 ],
             ]
         ),
@@ -49,14 +50,14 @@ async def start_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{OWNER_ID}")
+                    InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],
                 [
-                    InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
+                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=config.SUPPORT_CHANNEL),
+                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=config.SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(" اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_ID}")
+                    InlineKeyboardButton("⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
                 ],
             ]
         ),
