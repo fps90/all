@@ -62,7 +62,7 @@ def stream_markup(_, videoid, chat_id):
         [
             InlineKeyboardButton(text="⦗ كتم ⦘", callback_data=f"ADMIN Mute|{chat_id}"),
             InlineKeyboardButton(
-                text="⦗ إلغاء كتم⦘", callback_data=f"ADMIN Unmute|{chat_id}"
+                text="⦗ إلغاء كتم ⦘", callback_data=f"ADMIN Unmute|{chat_id}"
             ),
         ],
         [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data="close")],
