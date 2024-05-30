@@ -19,6 +19,7 @@ async def start_command(client, message):
         await message.reply_text("مرحبًا بك! اختر أحد الأزرار:", reply_markup=keyboard)
    
 
-@app.on_message(filters.text & ~filters.command("start"))
+@@app.on_message(filters.text & ~filters.command("start"))
 async def handle_message(client, message):
-    if message.from_user.id == OWNER:  # التحقق مما إذا كان المستخدم المطلوب هو المالك
+    if message.from_user.id == OWNER:
+        # Your code here
