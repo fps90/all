@@ -15,6 +15,3 @@ def start_command(client, message):
 @app.on_message(filters.command('test') & filters.user(OWNER))
 def test_command(client, message):
     message.reply_text('قم بتجربة لوحة المفاتيح:', reply_markup=keyboard)
-
-# تشغيل العميل
-app.run()
