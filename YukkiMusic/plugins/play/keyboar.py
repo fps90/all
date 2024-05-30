@@ -1,20 +1,20 @@
-from pyrogram import Client, filters
-from pyrogram.types import ReplyKeyboardMarkup, KeyboardButton
-from config import OWNER
+
 from YukkiMusic import app
+from pyrogram import Client, filters
+from pyrogram.types import ReplyKeyboardMarkup
+from config import OWNER
 
-# تعريف لوحة المفاتيح
-keyboard = ReplyKeyboardMarkup(
-    [
-        [KeyboardButton("زر 1"), KeyboardButton("زر 2")],
-        [KeyboardButton("زر 3"), KeyboardButton("زر 4")]
-    ],
-    resize_keyboard=True
-)
+# تحديد لوحة المفاتيح
+keyboard = ReplyKeyboardMarkup([['Button 1', 'Button 2']], resize_keyboard=True)
 
-# تعريف الأمر لعرض لوحة المفاتيح
-@app.on_message(filters.command("start"))
-async def start_command(client, message):
-    if message.from_user.id == OWNER:  # التحقق مما إذا كان المستخدم المطلوب هو المالك
-        await message.reply_text("مرحبًا بك! اختر أحد الأزرار:", reply_markup=keyboard)
-   
+@app.on_message(filters.command('start') & filters.user(OWNER))
+def start_command(client, message):
+    message.reply_text('لوحة المفاتيح للمطور:', reply_markup=keyboard)
+
+# دالة لاختبار لوحة المفاتيح
+@app.on_message(filters.command('test') & filters.user(OWNER))
+def test_command(client, message):
+    message.reply_text('قم بتجربة لوحة المفاتيح:', reply_markup=keyboard)
+
+# تشغيل العميل
+app.run()
