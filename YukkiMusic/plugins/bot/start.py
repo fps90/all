@@ -27,7 +27,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],[
                     InlineKeyboardButton("⦗ قناة السورس ⦘", url=config.SUPPORT_CHANNEL),
-                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=config.SUPPORT_GROUP")
+                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=config.SUPPORT_GROUP),
                 ],
                 [
                     InlineKeyboardButton("⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
