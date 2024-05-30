@@ -10,7 +10,7 @@ async def add_served_user(user_id: int):
     pass
 
 @app.on_message(
-    filters.command(["start", "str"]) & filters.private
+    filters.command(["start", "help"]) & filters.private
 )
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
@@ -27,13 +27,11 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=str(OWNER_ID)),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
                 ],
             ]
         )
     )
-
-
 
 
 @app.on_callback_query(filters.regex("home_start"))
