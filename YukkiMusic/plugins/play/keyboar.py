@@ -7,6 +7,6 @@ from config import OWNER
 # تحديد لوحة المفاتيح
 keyboard = ReplyKeyboardMarkup([['Button 1', 'Button 2']], resize_keyboard=True)
 
-@app.on_message(filters.command(["start", "help"]) & filters.private & filters.user(OWNER))
-async def start_(c: Client, message: Message):
-    await message.reply_text('لوحة المفاتيح للمطور:', reply_markup=keyboard)
+@app.on_message(filters.command(["start", "admin"]) & filters.private & filters.user(OWNER))
+async def start_or_help_command(client, message: Message):
+    await message.reply_text('لوحة المفاتيح للمطور:', reply_markup=keyboard, disable_web_page_preview=True)
