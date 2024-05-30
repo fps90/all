@@ -27,7 +27,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
                 ],
             ]
         )
@@ -49,7 +49,7 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
                 ],
             ]
         )
