@@ -24,7 +24,7 @@ async def start_(c: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="user_command")
+                    InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],[
                     InlineKeyboardButton("⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
@@ -90,7 +90,9 @@ async def commands_set(_, query: CallbackQuery):
 async def next_set(_, query: CallbackQuery):
     await query.answer("التالي")
     await query.edit_message_text(
-        "يرجى اختيار نوع الأوامر:",
+        """- تابع الازرار في الاسفل ↓
+
+يمديك تشوف كل اوامر البوت عن طريق زر اوامر البوت""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -99,7 +101,7 @@ async def next_set(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton("-› ࢪرجَۅعَ", callback_data="command_list"),
-                    InlineKeyboardButton("التالي", callback_data="user_command"),
+                    InlineKeyboardButton("التالي", callback_data="command_list"),
                 ],
             ]
         ),
@@ -122,7 +124,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")
                 ],
             ]
         ),
@@ -138,7 +140,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")
                 ],
             ]
         ),
@@ -155,14 +157,14 @@ async def guide_set(_, query: CallbackQuery):
 1-› أولا ، أضفني الى مجموعتك
 2-› بعد ذالك قم برفعي كمشرف واعطائي صلاحيات مثل باقي البشر.
 3-› بعد ذالك اكتب `.تحديث` بيانات البوت
-3-› اضف سيدي ومولاي @{me_user.username} في مجموعتك او اكتب `.انضم` لدعوة المساعد
+3-› اضف سيدي ومولاي في مجموعتك او اكتب `.انضم` لدعوة المساعد
 4-› اذ لم تستطيع اضافة المساعد او واجهت مشاكل تحدث مع رئيس الوزراء  .
 
 """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="home_start")
+                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")
                 ],
             ]
         ),
