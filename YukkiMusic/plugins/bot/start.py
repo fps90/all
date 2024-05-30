@@ -1,7 +1,7 @@
 from YukkiMusic import app
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID, BOT_USERNAME
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
 
 
 # دالة وهمية add_served_user لتجنب الخطأ
