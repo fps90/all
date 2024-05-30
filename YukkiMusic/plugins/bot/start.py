@@ -1,7 +1,7 @@
 from YukkiMusic import app
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID, START_IMG_URL
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER, START_IMG_URL
 
 # دالة وهمية add_served_user لتجنب الخطأ
 async def add_served_user(user_id: int):
@@ -48,7 +48,7 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER_ID}"),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER}"),
                 ],
             ]
         )
@@ -67,11 +67,11 @@ async def commands_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› اوامر التشغيل", callback_data="user_command"),
+                    InlineKeyboardButton("⦗ اوامر التشغيل ⦘", callback_data="user_command"),
                 ],
                 [
-                    InlineKeyboardButton("-› ࢪرجَۅعَ", callback_data="home_start"),
-                    InlineKeyboardButton("التالي", callback_data="next"),
+                    InlineKeyboardButton("⦗ رجوع ⦘", callback_data="home_start"),
+                    InlineKeyboardButton("⦗ التالي ⦘", callback_data="next"),
                 ],
             ]
         )
@@ -91,8 +91,8 @@ async def next_set(_, query: CallbackQuery):
                     InlineKeyboardButton("⦗ اوامر المطور ⦘", callback_data="developer_commands"),
                 ],
                 [
-                    InlineKeyboardButton("-› ࢪرجَۅعَ", callback_data="command_list"),
-                    InlineKeyboardButton("التالي", callback_data="command_list"),
+                    InlineKeyboardButton("⦗ رجوع ⦘", callback_data="command_list"),
+                    InlineKeyboardButton("⦗ التالي ⦘", callback_data="command_list"),
                 ],
             ]
         )
@@ -115,7 +115,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="command_list")
+                    InlineKeyboardButton("⦗ التالي ⦘", callback_data="next")
                 ],
             ]
         ),
@@ -131,7 +131,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="next")
+                    InlineKeyboardButton("⦗ رجوع ⦘", callback_data="next")
                 ],
             ]
         ),
@@ -155,7 +155,7 @@ async def guide_set(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("-› ࢪجَۅعَ", callback_data="next")
+                    InlineKeyboardButton("⦗ رجوع ⦘", callback_data="next")
                 ],
             ]
         ),
