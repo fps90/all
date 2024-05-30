@@ -27,11 +27,13 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=OWNER_ID),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=str(OWNER_ID)),
                 ],
             ]
         )
     )
+
+
 
 
 @app.on_callback_query(filters.regex("home_start"))
