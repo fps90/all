@@ -4,8 +4,35 @@ from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMa
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
 
 
+@app.on_message(
+    command(["start", f"str"]) & filters.private 
+)
+async def start_(c: Client, message: Message):
+    user_id = message.from_user.id
+    await add_served_user(user_id)
+    await message.reply_text(
+        f"""ههݪاެ حبيب {message.from_user.mention()} ❤️‍🔥\n
+اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
+
+-› MᥲᎥꪀƚᥲᎥꪀᥱძ ხy -› [S᥆ᥙrᥴᥱ Frᥱᥱძ᥆ꪔ](http://t.me/xl444)
+""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("🥇 اެضفني اެݪى مجمۅعتَك 🥇", url=f"https://t.me/{xl444}?startgroup=true")
+                ],[
+                    InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
+                ],[
+                    InlineKeyboardButton("اެݪاۅاެمࢪ", callback_data="command_list"),
+                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_ID}")                    
+                ],
+            ]
+        ),
+        disable_web_page_preview=True,
+    )
+
+
 @app.on_callback_query(filters.regex("home_start"))
-@check_blacklist()
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
@@ -33,7 +60,6 @@ async def start_set(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("user_guide"))
-@check_blacklist()
 async def guide_set(_, query: CallbackQuery):
     await query.answer("user guide")
     await query.edit_message_text(
@@ -57,7 +83,6 @@ async def guide_set(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("command_list"))
-@check_blacklist()
 async def commands_set(_, query: CallbackQuery):
     user_id = query.from_user.id
     await query.answer("👍🏻قائمة الاوامر")
@@ -79,7 +104,6 @@ async def commands_set(_, query: CallbackQuery):
 
 
 @app.on_callback_query(filters.regex("user_command"))
-@check_blacklist()
 async def user_set(_, query: CallbackQuery):
     await query.answer("👍🏻اوامر التشغيل")
     await query.edit_message_text(
