@@ -9,5 +9,5 @@ from YukkiMusic.misc import SUDOERS
 keyboard = ReplyKeyboardMarkup([['Button 1', 'Button 2']], resize_keyboard=True)
 
 @app.on_message(filters.command('start') & ~filters.user(SUDOERS) & ~filters.user(OWNER))
-async def start_command(client, message: Message):
+async def start_(c: Client, message: Message):
     await message.reply_text('لوحة المفاتيح للمطور:', reply_markup=keyboard)
