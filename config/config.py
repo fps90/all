@@ -11,7 +11,7 @@
 
 import sys
 from os import getenv
-
+import os
 from dotenv import load_dotenv
 from pyrogram import filters
 
