@@ -5,7 +5,7 @@ from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_ID
 
 
 @app.on_message(
-    command(["start", f"str"]) & filters.private 
+    filters.command(["start", f"str"]) & filters.private 
 )
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
