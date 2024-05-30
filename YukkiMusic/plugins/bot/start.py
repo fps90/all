@@ -1,7 +1,7 @@
 from YukkiMusic import app
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_USER, START_IMAGE_URL
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_USER, START_IMG_URL
 
 
 # دالة وهمية add_served_user لتجنب الخطأ
@@ -16,7 +16,7 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_photo(
-        photo=START_IMAGE_URL,
+        photo=START_IMG_URL,
         caption=f"""أَهلًا بك عزيزي في بوت تشغيل الميديا الصوتية في المجموعات والقنوات مع دعم مُميزات كثيرة يُمكنُك التحقُق منها عن طريق إِستخدام الازرار أدناه . \n⎯ ⎯ ⎯ ⎯""",
         reply_markup=InlineKeyboardMarkup(
             [
