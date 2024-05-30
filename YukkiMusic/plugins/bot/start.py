@@ -9,8 +9,7 @@ async def add_served_user(user_id: int):
     pass
 
 @app.on_message(
-    filters.command(["start", "help"]) & filters.private
-)
+    filters.command(["start", "help"]) & filters.private &filters.user(OWNER_ID)))
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
