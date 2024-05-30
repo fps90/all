@@ -26,7 +26,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER}"),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=int(OWNER)),
                 ],
             ]
         )
@@ -48,12 +48,11 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton(text="⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", url=f"tg://user?id={OWNER}"),
+                    InlineKeyboardButton(text="⦗ مطور البوت ⦘", user_id=int(OWNER)),
                 ],
             ]
         )
     )
-
 
 
 @app.on_callback_query(filters.regex("command_list"))
@@ -160,4 +159,3 @@ async def guide_set(_, query: CallbackQuery):
             ]
         ),
     )
-
