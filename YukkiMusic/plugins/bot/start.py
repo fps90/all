@@ -26,11 +26,11 @@ async def start_(c: Client, message: Message):
                 [
                     InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],[
-                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=config.SUPPORT_CHANNEL),
-                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=config.SUPPORT_GROUP),
+                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
+                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton("⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
+                    InlineKeyboardButton("⦗ مطور البوت ⦘", f"https://t.me/{OWNER_ID}"),
                 ],
             ]
         ),
@@ -53,11 +53,11 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton("⦗ اوامر البوت ⦘", callback_data="command_list")
                 ],
                 [
-                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=config.SUPPORT_CHANNEL),
-                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=config.SUPPORT_GROUP),
+                    InlineKeyboardButton("⦗ قناة السورس ⦘", url=SUPPORT_CHANNEL),
+                    InlineKeyboardButton("⦗ قناة التحديثات ⦘", url=SUPPORT_GROUP),
                 ],
                 [
-                    InlineKeyboardButton("⦗ مطور البوت ⦘", user_id=config.OWNER_ID),
+                    InlineKeyboardButton("⦗ مطور البوت ⦘", f"https://t.me/{OWNER_ID}"),
                 ],
             ]
         ),
