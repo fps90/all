@@ -30,8 +30,7 @@ async def start_(c: Client, message: Message):
                     InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"https://t.me/{OWNER_USER}"),
                 ],
             ]
-        ),
-        disable_web_page_preview=True,
+        )
     )
 
 
@@ -53,8 +52,7 @@ async def start_set(_, query: CallbackQuery):
                     InlineKeyboardButton("⦗ مطور البوت ⦘", url=f"https://t.me/{OWNER_USER}"),
                 ],
             ]
-        ),
-        disable_web_page_preview=True,
+        )
     )
 
 
@@ -76,7 +74,7 @@ async def commands_set(_, query: CallbackQuery):
                     InlineKeyboardButton("التالي", callback_data="next"),
                 ],
             ]
-        ),
+        )
     )
 
 @app.on_callback_query(filters.regex("next"))
@@ -97,7 +95,7 @@ async def next_set(_, query: CallbackQuery):
                     InlineKeyboardButton("التالي", callback_data="command_list"),
                 ],
             ]
-        ),
+        )
     )
 
 
