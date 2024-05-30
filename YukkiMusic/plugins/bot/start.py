@@ -62,7 +62,7 @@ async def commands_set(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""- تابع الازرار في الاسفل ↓
 
-يمديك تشوف كل اوامر البوت عن طريق زر اوامر البوت""",
+يمديك تشوف كل اوامر البوت عن طريق إستخدام الأزرار أدناه .""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -82,12 +82,12 @@ async def next_set(_, query: CallbackQuery):
     await query.edit_message_text(
         """- تابع الازرار في الاسفل ↓
 
-يمديك تشوف كل اوامر البوت عن طريق زر اوامر البوت""",
+يمديك تشوف كل اوامر البوت عن طريق إستخدام الأزرار أدناه .""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⦗ اوامر الادمن ⦘", callback_data="admin_commands"),
-                    InlineKeyboardButton("⦗ اوامر المطور ⦘", callback_data="developer_commands"),
+                    InlineKeyboardButton("⦗ اوامر المطورين ⦘", callback_data="admin_commands"),
+                    InlineKeyboardButton("⦗ اوامر المالك ⦘", callback_data="developer_commands"),
                 ],
                 [
                     InlineKeyboardButton("⦗ رجوع ⦘", callback_data="command_list"),
