@@ -1,7 +1,7 @@
 from YukkiMusic import app
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_USER
+from config import SUPPORT_GROUP, SUPPORT_CHANNEL, OWNER_USER, START_IMAGE_URL
 
 
 # دالة وهمية add_served_user لتجنب الخطأ
@@ -15,12 +15,9 @@ async def add_served_user(user_id: int):
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
-    await message.reply_text(
-        f"""ههݪاެ حبيب {message.from_user.mention()} ❤️‍🔥\n
-اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
-
--› MᥲᎥꪀƚᥲᎥᏁᥱძ ხy -› [S᥆ᥙrᥴᥱ Frᥱᥱძ᥆ꪔ](http://t.me/xl444)
-""",
+    await message.reply_photo(
+        photo=START_IMAGE_URL,
+        caption=f"""أَهلًا بك عزيزي في بوت تشغيل الميديا الصوتية في المجموعات والقنوات مع دعم مُميزات كثيرة يُمكنُك التحقُق منها عن طريق إِستخدام الازرار أدناه . \n⎯ ⎯ ⎯ ⎯""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -42,11 +39,7 @@ async def start_(c: Client, message: Message):
 async def start_set(_, query: CallbackQuery):
     await query.answer("home start")
     await query.edit_message_text(
-        f"""ههݪاެ حبيب [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) ❤️‍🔥\n
-اެناެ بَۅت بَمميࢪ࣪اެتَ متَعدَدةَ ݪتشغِيݪ اެݪاغاެنِي فَي اެݪمَجمَۅعاتَ 🥇.
-
--› MᥲᎥꪀƚᥲᎥᏁᥱძ ხy -› [S᥆ᥙrᥴᥱ Frᥱᥱძ᥆ꪔ](http://t.me/xl444)
-""",
+        f"""أَهلًا بك عزيزي في بوت تشغيل الميديا الصوتية في المجموعات والقنوات مع دعم مُميزات كثيرة يُمكنُك التحقُق منها عن طريق إِستخدام الازرار أدناه . \n⎯ ⎯ ⎯ ⎯""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
