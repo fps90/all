@@ -36,5 +36,5 @@ async def start_or_help_command(client, message: Message):
 
 @app.on_message(command(["⦗ حذف الكيبورد ⦘"]) & filters.private & filters.user(OWNER))
 async def remove_keyboard(client, message: Message):
-    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n– – – – – – \n⦗ تم حذف لوحة التحكم ⦘', reply_markup=keyboard_remove)
+    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n– – – – – – \n⦗ تم تنفيذ أمر لوحة التحكم ⦘', reply_markup=keyboard_remove)
 
