@@ -5,7 +5,7 @@ from pyrogram.types import ReplyKeyboardMarkup, Message
 from config import OWNER
 
 # تحديد لوحة المفاتيح
-keyboard = ReplyKeyboardMarkup(
+keyboard_main = ReplyKeyboardMarkup(
     [
         [('⦗ فتح الكيبورد ⦘')],
         [('⦗ اعادة تشغيل ⦘'), ('⦗ تحديث السورس ⦘')],
@@ -16,12 +16,29 @@ keyboard = ReplyKeyboardMarkup(
         [('اذاعه للكل'), ('توجيه للكل')],
         [('توجيه للمستخدمين'), ('توجيه للجروبات'), ('توجيه للقنوات')],
         [('توجيه للاساسيين'), ('توجيه للمطورين')],
-        [('حذف الكيبورد ⚒️')]
+        [('⦗ حذف الكيبورد ⦘')]
     ],
     resize_keyboard=True,
     one_time_keyboard=False
 )
 
-@app.on_message(command(["⦗ فتح الكيبورد ⦘", "/start"]) & filters.private & filters.user(OWNER))
+keyboard_remove = ReplyKeyboardMarkup(
+    [
+        [('⦗ حذف الكيبورد ⦘')],
+    ],
+    resize_keyboard=True,
+    one_time_keyboard=False
+)
+
+@app.on_message(command(["⦗ فتح الكيبورد ⦘", "تنصيب الكيبورد"]) & filters.private & filters.user(OWNER))
 async def start_or_help_command(client, message: Message):
-    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n – – – – – – \n⦗ يمكنك التحكم عن طريق الأزرار أدناه ⦘', reply_markup=keyboard)
+    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n – – – – – – \n⦗ يمكنك التحكم عن طريق الأزرار أدناه ⦘', reply_markup=keyboard_main)
+
+@app.on_message(command(["⦗ حذف الكيبورد ⦘"]) & filters.private & filters.user(OWNER))
+async def remove_keyboard(client, message: Message):
+    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n– – – – – – \n⦗ تم حذف لوحة التحكم ⦘', reply_markup=keyboard_remove)
+
+@app.on_message(filters.private & filters.user(OWNER))
+async def handle_private_message(client, message: Message):
+    # في حالة أخرى، إعادة تعيين اللوحة الرئيسية
+    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n – – – – – – \n⦗ يمكنك التحكم عن طريق الأزرار أدناه ⦘', reply_markup=keyboard_mai
