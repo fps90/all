@@ -54,7 +54,6 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
         ],
         prefixes=["/", "!", "%", ",", "", ".", "@", "#"],
     )
-    & filters.group
     & ~BANNED_USERS
 )
 @PlayWrapper
