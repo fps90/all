@@ -38,7 +38,3 @@ async def start_or_help_command(client, message: Message):
 async def remove_keyboard(client, message: Message):
     await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n– – – – – – \n⦗ تم حذف لوحة التحكم ⦘', reply_markup=keyboard_remove)
 
-@app.on_message(filters.private & filters.user(OWNER))
-async def handle_private_message(client, message: Message):
-    # في حالة أخرى، إعادة تعيين اللوحة الرئيسية
-    await message.reply_text('اهلأ بك عزيزي ⦗ المطور الاساسي ⦘ \n – – – – – – \n⦗ يمكنك التحكم عن طريق الأزرار أدناه ⦘', reply_markup=keyboard_mai
