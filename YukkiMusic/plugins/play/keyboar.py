@@ -24,7 +24,7 @@ keyboard_main = ReplyKeyboardMarkup(
 
 keyboard_remove = ReplyKeyboardMarkup(
     [
-        [('⦗ حذف الكيبورد ⦘')],
+        [('⦗ فتح الكيبورد ⦘')],
     ],
     resize_keyboard=True,
     one_time_keyboard=False
