@@ -20,12 +20,12 @@ import re
 
 # ________________________________________________________________________________#
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("API_ID", "8934899"))
+API_HASH = getenv("API_HASH", "bf3e98d2c351e4ad06946b4897374a1e")
 
 # ________________________________________________________________________________#
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("BOT_TOKEN", "7589453501:AAHHhKJEGZTYBhHru7acnlfDkP-URX-u6e4")
 OWNER = int(os.getenv("OWNER", "1854384004"))  # تأكد من تحويله إلى عدد صحيح
 # ________________________________________________________________________________#
 
@@ -37,7 +37,7 @@ ASSISTANT_PREFIX = getenv("ASSISTANT_PREFIX", ".")
 
 # ________________________________________________________________________________#
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://omsnkok:muntazer@cluster0.ywxsjao.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 
 # ________________________________________________________________________________#
@@ -56,7 +56,7 @@ SONG_DOWNLOAD_DURATION = int(
 
 # ________________________________________________________________________________#
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1002136390368"))
 
 
 # ________________________________________________________________________________#
@@ -70,7 +70,7 @@ PROTECT_CONTENT = getenv("PROTECT_CONTENT", "True")
 # ________________________________________________________________________________#
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "6815918609").split())
+    map(int, getenv("OWNER_ID", "1854384004").split())
 )  # Input type must be interger
 
 
@@ -88,7 +88,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # For customized or modified Repository
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/Vivekkumar-IN/YukkiMusic",
+    "https://github.com/fps90/all",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
@@ -198,7 +198,7 @@ SET_CMDS = getenv("SET_CMDS", "False")
 
 # ________________________________________________________________________________#
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
-STRING1 = getenv("STRING_SESSION", None)
+STRING1 = getenv("STRING_SESSION", "AQCIVfMAVOnqwm00hAxRH3d0B01ugZoA7mjkuc_Qh7URY7lp5BGRPaKoB56fHuQPDMxfEw11EhAMFX8RXSmAytYQqOZxmQH5BMiT0C7PyKM5blrZeOmduL9YTyy3Zhrj1RX7RXbGWEapCsqysvb-7kfaRoEVwJT8k8g9UyKv1opE75sEQupiXIEH2DPk58dsZFj6STzfBJJaRHUYxI05t8tcs9WcY7a5kRfW6u1pQ93IiX3rWoU5qg4zFg3a_EyYrCXTEpCiegCYCB-p6SaYfDQMH6WFsgOI8rNbQnLlws33kARa4skz8YuQ-rpLTOXcLCEr-xKapg9HJq-6jIKm6yYYQ2ejJgAAAAF-OYKaAA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
